@@ -172,6 +172,7 @@
 
 .hero-img {
   width: 100%;
+  border-radius: 50%;
 }
 
 .delivered-meals {
@@ -282,7 +283,8 @@
   z-index: -1;
 }
 .step-img {
-  width: 35%;
+  width: 40%;
+  border-radius: 10%;
 }
 /* ******************************* */
 /* Meal section */
@@ -543,7 +545,7 @@
       rgba(235, 151, 78, 0.35),
       rgba(230, 124, 34, 0.373)
     ),
-    url("../img/eating.jpg");
+    url("../img/e-1.jpg");
   background-size: cover;
   background-position: center;
 }
