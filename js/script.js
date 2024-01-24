@@ -61,3 +61,70 @@ const obs = new IntersectionObserver(
   }
 );
 obs.observe(sectionHeroEl);
+
+///////////////////////////////////////////////////////////////////////////////////////////
+////////////////// LOGIC for website
+// Data
+const account1 = {
+  owner: "Kartik Mishra",
+  pin: 1111,
+};
+
+const account2 = {
+  owner: "Ujjwal Baranwal",
+  pin: 2222,
+};
+
+const account3 = {
+  owner: "Ayush Yadav",
+  pin: 3333,
+};
+
+const account4 = {
+  owner: "Kabeer Sharma",
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+const createUsername = function (acc) {
+  acc.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join("");
+  });
+};
+createUsername(accounts);
+
+// element
+const labelWelcome = document.querySelector(".welcome");
+const btnLogin = document.querySelector(".login__btn");
+const inputLoginUsername = document.querySelector(".login__input--user");
+const inputLoginPin = document.querySelector(".login__input--pin");
+const containerApp = document.querySelector(".app");
+const containerDefault = document.querySelector(".section-default");
+
+//event listner
+//// event handlers
+let currentAcc;
+btnLogin.addEventListener("click", function (e) {
+  //prevent from submitting
+  e.preventDefault();
+  // console.log("log in");
+  currentAcc = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAcc);
+  if (currentAcc?.pin === Number(inputLoginPin.value)) {
+    console.log("LOGIN");
+    //display UI and welcome message
+    labelWelcome.textContent = `Welcome ${currentAcc.owner.split(" ")[0]}`;
+    containerApp.style.opacity = 100;
+    containerApp.style.display = "block";
+    containerDefault.style.display = "none";
+
+    // clearing input field
+    inputLoginPin.value = inputLoginUsername.value = "";
+  }
+});

@@ -1,4 +1,13 @@
 /* **************************** */
+/* Main Section */
+/* **************************** */
+.app {
+  display: none;
+  /* NOTE This creates the fade in/out anumation */
+  opacity: 0;
+  transition: all 1s;
+}
+/* **************************** */
 /* Header Section */
 /* **************************** */
 .header {
