@@ -9,35 +9,35 @@ btnNavEl.addEventListener("click", function () {
 ///////////////////////////////////////////////////////////
 // Scrooling effect
 
-const allLinks = document.querySelectorAll("a:link");
-console.log(allLinks);
-allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    e.preventDefault(); //prevent default so that we can apply our method on the event listeners
-    const href = link.getAttribute("href");
-    // console.log(href);
-    // console.log(e);
+// const allLinks = document.querySelectorAll("a:link");
+// console.log(allLinks);
+// allLinks.forEach(function (link) {
+//   link.addEventListener("click", function (e) {
+//     e.preventDefault(); //prevent default so that we can apply our method on the event listeners
+//     const href = link.getAttribute("href");
+//     // console.log(href);
+//     // console.log(e);
 
-    //scroll back to the top
-    if (href === "#") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-    //scroll to other links
-    if (href !== "#" && href.startsWith("#")) {
-      console.log(href);
-      const sectionEl = document.querySelector(href);
-      console.log(sectionEl);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
-    }
-    // close the navigation links
-    if (link.classList.contains("main-nav-link")) {
-      headerEl.classList.toggle("nav-open");
-    }
-  });
-});
+//     //scroll back to the top
+//     if (href === "#") {
+//       window.scrollTo({
+//         top: 0,
+//         behavior: "smooth",
+//       });
+//     }
+//     //scroll to other links
+//     if (href !== "#" && href.startsWith("#")) {
+//       console.log(href);
+//       const sectionEl = document.querySelector(href);
+//       console.log(sectionEl);
+//       sectionEl.scrollIntoView({ behavior: "smooth" });
+//     }
+//     // close the navigation links
+//     if (link.classList.contains("main-nav-link")) {
+//       headerEl.classList.toggle("nav-open");
+//     }
+//   });
+// });
 
 ///////////////////////////////////////////////////////////
 // Making the sitcky navigation after the Hero section
